@@ -1,6 +1,6 @@
-# client
+# Penchi
 
-> A Vue.js project
+> A Vue.js + Express project
 
 ## Build Setup
 
