@@ -6,7 +6,9 @@
   "private": true,
   "scripts": {
     "start": "node server.js",
-    "dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot",
+    "dev": "cross-env NODE_ENV=development npm run watch:server && npm run watch:client",
+    "watch:client": "webpack --watch --progress --debug --hide-modules",
+    "watch:server": "webpack --config webpack.server.config.js --progress --watch --hide-modules",
     "build": "npm run build:server && npm run build:client",
     "build:client": "cross-env NODE_ENV=production webpack --progress --hide-modules",
     "build:server": "cross-env NODE_ENV=production webpack --config webpack.server.config.js --progress --hide-modules"
@@ -36,4 +38,3 @@
     "webpack-dev-server": "^2.2.0"
   }
 }
-
